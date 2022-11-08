@@ -1,0 +1,104 @@
+**********************
+    API END POINTS
+**********************
+
+## Signup user :---
+
+  [ POST ] http://localhost:3000/api/user/signup
+
+  ** Request body :---
+
+    {
+      "email" : "aaa@bbb.com", >>> [ req ]
+      "password" : "123456", >>> [ req ]
+      "confirm_password" : "123456", >>> [ req ]
+      "phone" : 987456, >>> [ req ]
+      "street" : "ssss", >>> [ req ]
+      "city" : "cccc", >>> [ req ]
+      "pincode" : 963852, >>> [ req ]
+      "state" : "WB", >>> [ req ]
+      "country" : "IN" >>> [ req ]
+      "panNumber" : "aosjdid" >>> [ req ]
+      "dob" : "10/5/1999" >>> [ req ]
+      "broker" : "IN" >>> [ optional ]
+      "brokerId" : "IN" >>> [ optional ]
+      "userType" : "IN" >>> [ optional, default =>> 'user' ]
+    }
+
+
+
+## Login user :---
+
+  [ POST ] http://localhost:3000/api/user/login
+
+  ** Request body :---
+    
+    {
+      "email" : "sarmi@elphill.com", >>> [ req ]
+      "password" : "123456", >>> [ req ]
+    }
+
+
+## List all users :---
+
+  [ GET ] http://localhost:3000/api/user/
+
+
+## Find user by user_id :---
+
+  [ GET ] http://localhost:3000/api/user/<USER_ID>
+
+
+
+## Update user details :---
+
+  [ PUT ] http://localhost:3000/api/user/<USER_ID>
+
+  ** Request body :---
+    
+    {
+      "email" : "bbb@bbb.com", >>> [ optional ]
+      "phone" : 987456, >>> [ optional ]
+      "street" : "ssss", >>> [ optional ]
+      "city" : "cccc", >>> [ optional ]
+      "pincode" : 963852, >>> [ optional ]
+      "state" : "WB", >>> [ optional ]
+      "country" : "IN" >>> [ optional ]
+    }
+
+  ** Pass JWT in Authorization HEADER (bearer token)
+
+
+## Update user status :---
+
+  [ PUT ] http://localhost:3000/api/user/<USER_ID>/status/<STATUS>
+
+  <STATUS> >>> [ 'active', 'inactive', 'suspended' ]
+
+  ** Pass JWT in Authorization HEADER (bearer token)
+
+
+## Create Client API :---
+
+  [ POST ] http://localhost:3000/api/user/<USER_ID>/client_api
+
+  ** Pass JWT in Authorization HEADER (bearer token)
+
+
+## Get API list by user_id :---
+
+  [ GET ] http://localhost:3000/api/user/<USER_ID>/client_api
+
+  ** Pass JWT in Authorization HEADER (bearer token)
+
+
+## Update client API status :---
+
+  [ PUT ] http://localhost:3000/api/user/<USER_ID>/client_api/<API_ID>/status/<STATUS>
+
+  <STATUS> >>> [ 'active', 'inactive' ]
+
+  ** Pass JWT in Authorization HEADER (bearer token)
+
+
+
